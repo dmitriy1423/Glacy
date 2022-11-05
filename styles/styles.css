@@ -64,7 +64,10 @@ body {
 
 .navigation-list,
 .slider-pagination-list,
-.social-list {
+.social-list,
+.products-list,
+.advantages-list,
+.footer-menu {
   margin: 0;
   padding: 0;
   list-style-type: none;
@@ -86,6 +89,18 @@ body {
   box-shadow: 0 4px 12px rgba(45, 52, 64, 0.1);
   border-radius: 26px;
   cursor: pointer;
+}
+
+.form-input {
+  box-sizing: border-box;
+  padding: 14px 16px;
+  font: inherit;
+  font-size: 16px;
+  line-height: 20px;
+  color: #2d3440;
+  border: none;
+  outline: 1px solid #b9b9b9;
+  border-radius: 4px;
 }
 
 .navigation {
@@ -174,6 +189,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 630px;
   padding-top: 21px;
+  margin-bottom: 80px;
 }
 
 .slider-product-wrapper {
@@ -269,7 +285,6 @@ body {
 }
 
 .social-item-link {
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -284,7 +299,14 @@ body {
   transform: scale(1.5);
 }
 
+.presents {
+  margin-bottom: 80px;
+}
+
 .presents-title {
+  margin-top: 0;
+  margin-bottom: 55px;
+  padding: 0 368px;
   font-size: 32px;
   line-height: 46px;
   font-weight: 900;
@@ -292,7 +314,33 @@ body {
   text-align: center;
 }
 
+.presents-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.present {
+  padding: 36px 206px 36px 36px;
+  background-color: #ff7799;
+  border-radius: 16px;
+}
+
+.present-malin {
+  background-image: url("../images/malina-present.png");
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+.present-marmel {
+  background-image: url("../images/marshmallow-present.png");
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
 .present-title {
+  margin-top: 0;
+  margin-bottom: 28px;
   font-size: 24px;
   line-height: 30px;
   font-weight: 700;
@@ -300,10 +348,19 @@ body {
 }
 
 .present-description {
+  margin-top: 0;
+  margin-bottom: 28px;
   color: #2d3440;
 }
 
+.products {
+  margin-bottom: 80px;
+}
+
 .products-title {
+  margin-top: 0;
+  margin-bottom: 107px;
+  padding: 0 321px;
   font-size: 32px;
   line-height: 46px;
   font-weight: 900;
@@ -311,7 +368,30 @@ body {
   text-align: center;
 }
 
+.products-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.product-item {
+  position: relative;
+  background-color: #fcfcfc;
+  border-radius: 8px;
+}
+
+.product-item-wrapper {
+  padding: 133px 40px 24px 40px;
+}
+
+.product-item-cart-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
 .product-item-title {
+  margin-top: 0;
+  margin-bottom: 8px;
   font-size: 20px;
   line-height: 24px;
   font-weight: 700;
@@ -319,20 +399,56 @@ body {
   color: #2d3440;
 }
 
+.product-item-image {
+  display: block;
+  position: absolute;
+  left: 50%;
+  bottom: 80px;
+  transform: translate(-50%, -50%);
+}
+
 .product-item-description {
+  margin-top: 0;
+  margin-bottom: 16px;
   font-size: 16px;
   line-height: 22px;
   text-align: center;
 }
 
 .product-item-price {
+  padding: 4px 0;
   font-size: 20px;
   line-height: 24px;
   font-weight: 700;
   color: #2d3440;
 }
 
+.product-item-button {
+  width: 32px;
+  height: 32px;
+  background-color: #ff2f64;
+  border-radius: 26px;
+  border: none;
+  cursor: pointer;
+}
+
+.product-item-button-icon {
+  fill: #fcfcfc;
+}
+
+.advantages {
+  margin-bottom: 80px;
+  padding: 56px 40px;
+  background-color: #ffffff;
+  border: 24px solid;
+  border-image: url("../images/advantages-border.png");
+  border-image-slice: 30;
+  border-radius: 16px;
+}
+
 .advantages-title {
+  margin-top: 0;
+  margin-bottom: 56px;
   font-size: 32px;
   line-height: 46px;
   font-weight: 900;
@@ -340,25 +456,196 @@ body {
   text-align: center;
 }
 
+.advantages-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px 32px;
+}
+
+.advantages-list-item {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 16px;
+}
+
+.advantages-description {
+  margin: 0;
+}
+
+.advantages-list-item:nth-child(1) .advantages-item-icon {
+  background-image: url("../images/icons/ice-cream.svg");
+  background-repeat: no-repeat;
+}
+
+.advantages-list-item:nth-child(2) .advantages-item-icon {
+  background-image: url("../images/icons/cow.svg");
+  background-repeat: no-repeat;
+}
+
+.advantages-list-item:nth-child(3) .advantages-item-icon {
+  background-image: url("../images/icons/leaf.svg");
+  background-repeat: no-repeat;
+}
+
+.advantages-list-item:nth-child(4) .advantages-item-icon {
+  background-image: url("../images/icons/thermometer.svg");
+  background-repeat: no-repeat;
+}
+
+.news-submit-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin-bottom: 80px;
+}
+
+.news {
+  padding: 33px 235px 68px 32px;
+  background-image: url("../images/news-background.png");
+  background-size: 570px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 16px;
+}
+
 .news-description {
+  margin-top: 0;
+  margin-bottom: 12px;
   line-height: 20px;
 }
 
 .news-title {
+  margin: 0;
   font-size: 24px;
   line-height: 30px;
   font-weight: 700;
   color: #2d3440;
 }
 
+.submit {
+  padding: 26px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  border: 6px solid;
+  border-image: url("../images/submit-border.png");
+  border-image-slice: 16;
+}
+
+.submit-description {
+  margin-top: 0;
+  margin-bottom: 42px;
+}
+
+.submit-input {
+  width: 332px;
+}
+
+.submit-button {
+  color: #ffffff;
+  background-color: #ff2f64;
+  outline: 4px solid rgba(255, 47, 100, 0.3);
+  margin-left: 14px;
+}
+
+.delivery {
+  display: grid;
+  grid-template-columns: auto 500px;
+  gap: 135px;
+  padding: 64px 64px 64px 100px;
+  margin-bottom: 80px;
+  background-image: url("../images/delivery-background.png");
+  border-radius: 16px;
+}
+
+.delivery-text-wrapper {
+  padding-top: 102px;
+  padding-bottom: 100px;
+}
+
+.delivery-form-wrapper {
+  padding: 40px;
+  background-color: #fcfcfc;
+  box-shadow: 0 15px 40px rgba(45, 52, 64, 0.12);
+  border-radius: 8px;
+}
+
+.delivery-form-input-wrapper {
+  margin: 0;
+  margin-bottom: 32px;
+  display: grid;
+  grid-template-columns: 117px 287px;
+  column-gap: 16px;
+  row-gap: 20px;
+}
+
+.delivery-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+}
+
 .delivery-title {
+  margin-top: 0;
+  margin-bottom: 24px;
   font-size: 32px;
   line-height: 46px;
   font-weight: 900;
   color: #2d3440;
 }
 
+.delivery-description {
+  margin: 0;
+}
+
+.delivery-form-description {
+  margin-top: 0;
+  margin-bottom: 32px;
+}
+
+.delivery-form-address {
+  grid-column: 1 / -1;
+}
+
+.delivery-form-label {
+  line-height: 20px;
+  font-weight: 700;
+  color: #2d3440;
+}
+
+.delivery-form-button {
+  display: block;
+  margin: 0 auto;
+  background-color: #ff2f64;
+  color: #fcfcfc;
+  outline: 4px solid rgba(255, 47, 100, 0.3);
+  box-shadow: 0 4px 12px rgba(45, 52, 64, 0.1);
+}
+
+.contacts {
+  padding: 64px;
+  background-image: url("../images/contacts-background.jpg");
+  background-size: 1170px;
+  background-position: center;
+  border-radius: 16px;
+}
+
+.contacts-wrapper {
+  width: 263px;
+  padding: 40px;
+  background-color: #fcfcfc;
+  box-shadow: 0 8px 16px rgba(45, 52, 64, 0.12);
+  border-radius: 8px;
+}
+
+.contacts-description {
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
 .contacts-address-text {
+  margin-top: 0;
+  margin-bottom: 24px;
   font-style: normal;
   font-size: 20px;
   line-height: 24px;
@@ -375,8 +662,32 @@ body {
 }
 
 .contacts-tel-text {
+  margin-top: 0;
+  margin-bottom: 32px;
   font-size: 14px;
   line-height: 20px;
+}
+
+.contacts-button {
+  background-color: #ff2f64;
+  outline: 4px solid rgba(255, 47, 100, 0.3);
+  color: #fcfcfc;
+}
+
+.footer-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 48px 14px;
+}
+
+.footer-social-list {
+  max-width: 168px;
+}
+
+.footer-menu {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  column-gap: 24px;
 }
 
 .footer-menu-link {
@@ -387,10 +698,23 @@ body {
 }
 
 .footer-menu-link-for-providers {
+  position: relative;
   font-weight: 700;
 }
 
+.footer-menu-link-for-providers::before {
+  content: url("../images/icons/heart-fill.svg");
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 0;
+  left: -16px;
+  transform: translate(-50%);
+}
+
 .from-htmlacademy-text {
+  margin-top: 10px;
+  margin-bottom: 0;
   font-size: 12px;
   line-height: 16px;
   color: #2d3440;
