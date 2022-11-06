@@ -131,14 +131,16 @@
           </fieldset>
           <fieldset class="filter-group filter-group-price">
             <legend class="filter-title">Цена: 100 ₽ – 500 ₽</legend>
-            <div class="range">
-              <div class="range-bar">
-                <button class="range-toggle toggle-min" type="button">
-                  <span class="visually-hidden">Уменьшить цену</span>
-                </button>
-                <button class="range-toggle toggle-max" type="button">
-                  <span class="visually-hidden">Увеличить цену</span>
-                </button>
+            <div class="range-wrapper">
+              <div class="range">
+                <div class="range-bar" style="left: 32px; width: 72px;">
+                  <button class="range-toggle toggle-min" type="button">
+                    <span class="visually-hidden">Уменьшить цену</span>
+                  </button>
+                  <button class="range-toggle toggle-max" type="button">
+                    <span class="visually-hidden">Увеличить цену</span>
+                  </button>
+                </div>
               </div>
             </div>
           </fieldset>
@@ -147,25 +149,29 @@
             <ul class="filter-list">
               <li class="filter-item">
                 <label class="control">
-                  <input class="visully-hidden control-input" type="radio" name="product-group">
+                  <input class="visually-hidden control-input" type="radio" name="product-group">
+                  <span class="control-mark"></span>
                   <span class="control-label">0%</span>
                 </label>
               </li>
               <li class="filter-item">
                 <label class="control">
-                  <input class="visully-hidden control-input" type="radio" name="product-group" checked>
+                  <input class="visually-hidden control-input" type="radio" name="product-group" checked>
+                  <span class="control-mark"></span>
                   <span class="control-label">до 10%</span>
                 </label>
               </li>
               <li class="filter-item">
                 <label class="control">
-                  <input class="visully-hidden control-input" type="radio" name="product-group">
+                  <input class="visually-hidden control-input" type="radio" name="product-group">
+                  <span class="control-mark"></span>
                   <span class="control-label">до 30%</span>
                 </label>
               </li>
               <li class="filter-item">
                 <label class="control">
-                  <input class="visully-hidden control-input" type="radio" name="product-group">
+                  <input class="visually-hidden control-input" type="radio" name="product-group">
+                  <span class="control-mark"></span>
                   <span class="control-label">выше 30%</span>
                 </label>
               </li>
@@ -173,34 +179,39 @@
           </fieldset>
           <fieldset class="filter-group filter-group-fillers">
             <legend class="filter-title">Наполнители:</legend>
-            <ul class="filter-list">
+            <ul class="filter-list filter-list-fillers">
               <li class="filter-item">
                 <label class="control">
                   <input class="visually-hidden control-input" type="checkbox" name="chocolate" checked>
+                  <span class="control-mark"></span>
                   <span class="control-label">шоколадные</span>
                 </label>
               </li>
               <li class="filter-item">
                 <label class="control">
                   <input class="visually-hidden control-input" type="checkbox" name="sugar" checked>
+                  <span class="control-mark"></span>
                   <span class="control-label">сахарные посыпки</span>
                 </label>
               </li>
               <li class="filter-item">
                 <label class="control">
                   <input class="visually-hidden control-input" type="checkbox" name="fruits">
+                  <span class="control-mark"></span>
                   <span class="control-label">фрукты</span>
                 </label>
               </li>
               <li class="filter-item">
                 <label class="control">
                   <input class="visually-hidden control-input" type="checkbox" name="syrups">
+                  <span class="control-mark"></span>
                   <span class="control-label">сиропы</span>
                 </label>
               </li>
               <li class="filter-item">
                 <label class="control">
                   <input class="visually-hidden control-input" type="checkbox" name="jams">
+                  <span class="control-mark"></span>
                   <span class="control-label">джемы</span>
                 </label>
               </li>
@@ -405,37 +416,39 @@
             </div>
           </li>
         </ul>
-        <a class="button catalog-button" href="#">Показать еще</a>
-        <ul class="pagination">
-          <li class="pagination-item">
-            <a class="pagination-link pagination-prev pagination-disabled">
-              <span class="visully-hidden">Предыдущая страница</span>
-            </a>
-          </li>
-          <li class="pagination-item">
-            <a class="pagination-link pagination-current">1</a>
-          </li>
-          <li class="pagination-item">
-            <a class="pagination-link" href="#">2</a>
-          </li>
-          <li class="pagination-item">
-            <a class="pagination-link" href="#">3</a>
-          </li>
-          <li class="pagination-item">
-            <a class="pagination-link" href="#">4</a>
-          </li>
-          <li class="pagination-item">
-            <a class="pagination-link" href="#">5</a>
-          </li>
-          <li class="pagination-item">
-            <a class="pagination-link pagination-next" href="#">
-              <span class="visually-hidden">Следующая страница</span>
-            </a>
-          </li>
-        </ul>
+        <div class="pagination-wrapper">
+          <a class="button catalog-button" href="#">Показать еще</a>
+          <ul class="pagination">
+            <li class="pagination-item pagination-prev">
+              <a class="pagination-link pagination-disabled">
+                <span class="visually-hidden">Предыдущая страница</span>
+              </a>
+            </li>
+            <li class="pagination-item pagination-current">
+              <span class="pagination-link">1</span>
+            </li>
+            <li class="pagination-item">
+              <a class="pagination-link" href="#">2</a>
+            </li>
+            <li class="pagination-item">
+              <a class="pagination-link" href="#">3</a>
+            </li>
+            <li class="pagination-item">
+              <a class="pagination-link" href="#">4</a>
+            </li>
+            <li class="pagination-item">
+              <a class="pagination-link" href="#">5</a>
+            </li>
+            <li class="pagination-item pagination-next">
+              <a class="pagination-link" href="#">
+                <span class="visually-hidden">Следующая страница</span>
+              </a>
+            </li>
+          </ul>
+        </div>
       </section>
     </main>
-    <footer class="footer">
+    <footer class="footer catalog-footer">
       <div class="footer-wrapper">
         <ul class="social-list">
           <li class="social-item">
