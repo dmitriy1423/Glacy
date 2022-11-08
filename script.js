@@ -11,8 +11,10 @@ const popCartEmpty = document.querySelector(".popover-cart-empty");
 
 const dropButtons = document.querySelectorAll(".popover-cart-item-drop");
 let countCarts = dropButtons.length;
-let cartIsEmpty = false;
 
+const contactsModal = document.querySelector(".contacts-button");
+const modal = document.querySelector(".modal-container");
+const modalClose = document.querySelector(".modal-close-button");
 
 catalog.onclick = function() {
   catalog.classList.toggle("navigation-link-active");
@@ -56,10 +58,23 @@ cart.onclick = function() {
     e.preventDefault();
     item.closest(".popover-cart-item").style.display = 'none';
     countCarts--;
+    cart.querySelector(".count-products").textContent = `${countCarts} товар`;
     if(countCarts === 0) {
       popCart.style.display = 'none';
       popCart.classList.add("empty");
       popCartEmpty.style.display = 'block';
+      cart.querySelector(".count-products").textContent = "Пусто";
     }
   }));
+}
+
+
+contactsModal.onclick = function() {
+  modal.classList.toggle("modal-container-open");
+}
+
+modalClose.onclick = function() {
+  if(modal.classList.contains("modal-container-open")) {
+    modal.classList.remove("modal-container-open");
+  }
 }
