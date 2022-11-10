@@ -34,7 +34,18 @@ body {
   font-size: 16px;
   line-height: 22px;
   color: #565c66;
+}
+
+.pink {
   background-color: #feafc3;
+}
+
+.blue {
+  background-color: #69a9ff;
+}
+
+.yellow {
+  background-color: #fcc850;
 }
 
 .wrapper {
@@ -63,6 +74,8 @@ body {
 }
 
 .navigation-list,
+.slider-list,
+.slider,
 .slider-pagination-list,
 .social-list,
 .products-list,
@@ -159,10 +172,46 @@ body {
   font: inherit;
   font-size: 16px;
   line-height: 20px;
+  background-color: #ffffff;
   color: #2d3440;
   border: none;
   outline: 1px solid #b9b9b9;
   border-radius: 4px;
+}
+
+.form-input::placeholder {
+  color: #b9b9b9;
+}
+
+.form-input:empty {
+  outline: 1px solid #b9b9b9;
+}
+
+.form-input:hover {
+  outline: 1px solid #2d3440;
+}
+
+.form-input:focus {
+  outline: 2px solid #2d3440;
+}
+
+.form-input:invalid {
+  outline: 1px solid #ea5454;
+}
+
+.form-input:invalid:hover {
+  outline: 2px solid #ea5454;
+}
+
+.form-input:disabled {
+  background-color: #e7e7e7;
+  outline: 1px solid #b9b9b9;
+  opacity: 0.65;
+}
+
+.form-input:disabled:hover {
+  background-color: #e7e7e7;
+  outline: 1px solid #b9b9b9;
 }
 
 .navigation {
@@ -212,40 +261,14 @@ body {
   padding: 8px 38px 8px 16px;
 }
 
-.navigation-link-active {
-  color: #fcfcfc;
-  background-color: #ff4a78;
-  border-radius: 30px;
-}
-
-.navigation-link-active:hover {
-  background-color: #ff4a78;
-  opacity: 0.6;
-}
-
-.navigation-link-active:focus {
-  background-color: #ff4a78;
-  outline: 2px solid #000000;
-}
-
-.navigation-link-active:active {
-  background-color: #ff4a78;
-  opacity: 0.3;
-  outline: none;
-}
-
-.navigation-link-active svg {
-  fill: #fcfcfc;
-}
-
 .navigation-link-active .navigation-popover-arrow-icon {
   transform: rotate(180deg);
 }
 
 .navigation-popover-arrow-icon {
   position: absolute;
-  right: 16px;
-  top: 12px;
+  right: 15px;
+  top: 10px;
   fill: #2d3440;
 }
 
@@ -299,6 +322,10 @@ body {
 
 .navigation-logo {
   margin-right: 16px;
+}
+
+.logo {
+  display: block;
 }
 
 .navigation-user .navigation-link {
@@ -382,7 +409,7 @@ body {
 .navigation-login-icon {
   position: absolute;
   top: 8px;
-  left: 16px;
+  left: 15px;
   fill: #2d3440;
 }
 
@@ -469,7 +496,7 @@ body {
 
 .navigation-cart-icon {
   position: absolute;
-  top: 6px;
+  top: 8px;
   left: 16px;
   fill: #2d3440;
 }
@@ -629,13 +656,39 @@ body {
 
 .slider-product {
   display: grid;
-  grid-template-columns: 1fr 630px;
+  grid-template-columns: 1fr 640px;
   padding-top: 27px;
   margin-bottom: 80px;
 }
 
-.slider-product-wrapper {
+.slider-list {
+  grid-column: 1 / -1;
+}
+
+.slider-pagination {
   grid-column: 1 / 2;
+}
+
+.slider-social {
+  grid-column: 2 / 3;
+}
+
+.slider-item {
+  display: none;
+}
+
+.slider-item-current {
+  display: grid;
+  grid-template-columns: 1fr 630px;
+}
+
+.slider-item-images-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 41px;
+}
+
+.slider-item-desc-wrapper {
   padding-top: 114px;
   padding-left: 70px;
   padding-bottom: 114px;
@@ -658,20 +711,63 @@ body {
   color: #2d3440;
 }
 
+.slider-item-image {
+  position: relative;
+}
+
 .slider-image {
   display: block;
   padding: 0 21px;
 }
 
-.slider {
-  background-image: url("../images/strawberry-slide-next-1.png"), url("../images/strawberry-slide-next-2.png");
-  background-repeat: no-repeat, no-repeat;
-  background-position: right 141px center , right center;
+.slider-image-wrapper {
+  position: relative;
 }
 
-.slider-wrapper {
+.slider-image-wrapper::after {
+  position: absolute;
+  content: "";
+  left: calc(50% - 312px/2 + 3px);
+  top: calc(50% - 312px/2);
+  width: 312px;
+  height: 312px;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.slider-image-next {
   position: relative;
-  width: 348px;
+  opacity: 0.4;
+}
+
+.slider-image-next .slider-image {
+  padding: 0;
+}
+
+.slider-image-next::after {
+  position: absolute;
+  content: "";
+  left: calc(50% - 100px/2);
+  top: calc(50% - 100px/2);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.pink .slider-image-wrapper::after,
+.pink .slider-image-next::after {
+  background-color: #ffcbd8;
+}
+
+.blue .slider-image-wrapper::after,
+.blue .slider-image-next::after {
+  background-color: #9fc8ff;
+}
+
+.yellow .slider-image-wrapper::after,
+.yellow .slider-image-next::after {
+  background-color: #fcdc92;
 }
 
 .slider-controls {
@@ -1331,6 +1427,14 @@ body {
   border-radius: 4px;
   appearance: none;
   resize: none;
+}
+
+.modal-textarea:hover {
+  outline: 1px solid #2d3440;
+}
+
+.modal-textarea:focus {
+  outline: 2px solid #2d3440;
 }
 
 .modal-button {

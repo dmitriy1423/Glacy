@@ -16,6 +16,83 @@ const contactsModal = document.querySelector(".contacts-button");
 const modal = document.querySelector(".modal-container");
 const modalClose = document.querySelector(".modal-close-button");
 
+const prevItemButton = document.querySelectorAll(".slider-prev");
+const nextItemButton = document.querySelectorAll(".slider-next");
+const sliderList = document.querySelector(".slider-list");
+const sliderPagList = document.querySelector(".slider-pagination-list");
+const sliderPagButtons = document.querySelectorAll(".slider-pagination-button");
+
+let activeSlideIndex = 0;
+let activePagIndex = 0;
+
+const body = document.querySelector("body");
+const bodyColors = ["pink", "blue", "yellow"];
+
+function findIndex(node) {
+  let i = 1;
+  while(node.previousSibling) {
+    node = node.previousSibling;
+    if(node.nodeType === 1) {
+      i++;
+    }
+  }
+  return i;
+}
+
+sliderPagButtons.forEach(item => item.addEventListener('click', (e) => {
+  e.preventDefault();
+
+  if(item.classList.contains("slider-pagination-button-current")) {
+    activePagIndex = findIndex(item.closest(".slider-pagination-item")) - 1;
+  }
+
+  if((findIndex(item.closest(".slider-pagination-item")) - 1) !== activePagIndex) {
+    sliderPagList.children[activePagIndex].querySelector(".slider-pagination-button").classList.remove("slider-pagination-button-current");
+    sliderList.children[activePagIndex].classList.remove("slider-item-current");
+    body.classList.remove(bodyColors[activePagIndex]);
+
+    activePagIndex = findIndex(item.closest(".slider-pagination-item")) - 1;
+    sliderList.children[activePagIndex].classList.add("slider-item-current");
+    body.classList.add(bodyColors[activePagIndex]);
+    sliderPagList.children[activePagIndex].querySelector(".slider-pagination-button").classList.add("slider-pagination-button-current");
+    activeSlideIndex = activePagIndex;
+  }
+
+  activeSlideIndex = activePagIndex;
+
+}))
+
+nextItemButton.forEach(item => item.addEventListener('click', (e) => {
+  e.preventDefault();
+  changeSlide('up');
+}))
+
+prevItemButton.forEach(item => item.addEventListener('click', (e) => {
+  e.preventDefault();
+  changeSlide('down');
+}))
+
+function changeSlide(direction) {
+  sliderList.children[activeSlideIndex].classList.remove("slider-item-current");
+  body.classList.remove(bodyColors[activeSlideIndex]);
+  sliderPagList.children[activeSlideIndex].querySelector(".slider-pagination-button").classList.remove("slider-pagination-button-current");
+  if(direction === 'up') {
+      activeSlideIndex++;
+      if(activeSlideIndex === sliderList.children.length) {
+          activeSlideIndex = 0;
+      }
+  } else if(direction === 'down') {
+      activeSlideIndex--;
+      if(activeSlideIndex < 0) {
+          activeSlideIndex = sliderList.children.length - 1;
+      }
+  }
+  sliderList.children[activeSlideIndex].classList.add("slider-item-current");
+  body.classList.add(bodyColors[activeSlideIndex]);
+  sliderPagList.children[activeSlideIndex].querySelector(".slider-pagination-button").classList.add("slider-pagination-button-current");
+  activePagIndex = activeSlideIndex;
+}
+
 catalog.onclick = function() {
   catalog.classList.toggle("navigation-link-active");
   if(catalog.classList.contains("navigation-link-active")) {
@@ -57,6 +134,7 @@ cart.onclick = function() {
   dropButtons.forEach(item => item.addEventListener('click', (e) => {
     e.preventDefault();
     item.closest(".popover-cart-item").style.display = 'none';
+    item.closest(".popover-cart-item").innerHTML = "";
     countCarts--;
     cart.querySelector(".count-products").textContent = `${countCarts} товар`;
     if(countCarts === 0) {
@@ -67,7 +145,6 @@ cart.onclick = function() {
     }
   }));
 }
-
 
 contactsModal.onclick = function() {
   modal.classList.toggle("modal-container-open");
