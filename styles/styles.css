@@ -195,11 +195,12 @@ body {
   outline: 2px solid #2d3440;
 }
 
-.form-input:invalid {
+.form-input:invalid:not(:placeholder-shown) {
   outline: 1px solid #ea5454;
 }
 
-.form-input:invalid:hover {
+.form-input:invalid:not(:placeholder-shown):hover,
+.form-input:invalid:not(:placeholder-shown):focus {
   outline: 2px solid #ea5454;
 }
 
@@ -1072,12 +1073,15 @@ body {
 }
 
 .advantages {
+  padding: 24px;
   margin-bottom: 80px;
+  background-image: url("../images/advantages-border-pattern.png");
+  border-radius: 16px;
+}
+
+.advantages-wrapper {
   padding: 56px 40px;
   background-color: #ffffff;
-  border: 24px solid;
-  border-image: url("../images/advantages-border.png");
-  border-image-slice: 30;
   border-radius: 16px;
 }
 
@@ -1158,12 +1162,17 @@ body {
 }
 
 .submit {
+  padding: 6px;
+  background-image: url("../images/submit-border.png");
+  background-position: center;
+  background-size: 570px 224px;
+  border-radius: 16px;
+}
+
+.submit-wrapper {
   padding: 26px;
   background-color: #ffffff;
   border-radius: 16px;
-  border: 6px solid;
-  border-image: url("../images/submit-border.png");
-  border-image-slice: 16;
 }
 
 .submit-description {
@@ -1248,6 +1257,87 @@ body {
 .delivery-form-button {
   display: block;
   margin: 0 auto;
+}
+
+.form-label {
+  display: flex;
+}
+
+.form-label-icon {
+  position: relative;
+  padding-right: 16px;
+}
+
+.tooltip {
+  position: relative;
+  margin-top: 3px;
+  margin-left: 4px;
+  width: 16px;
+  height: 16px;
+}
+
+.tooltip-toggle {
+  display: block;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background-color: transparent;
+}
+
+.tooltip-icon {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.tooltip-toggle:hover .tooltip-icon {
+  color: #2d3440;
+}
+
+.tooltip-text {
+  box-sizing: border-box;
+  position: absolute;
+  display: none;
+  top: -9px;
+  left: 22px;
+  min-width: 162px;
+  padding: 10px 8px;
+  margin-left: 2px;
+  font-size: 12px;
+  line-height: 16px;
+  color: #565c66;
+  background-color: #fcfcfc;
+  border: 1px solid #B9B9B9;
+  box-shadow: 0 2px 12px rgba(173, 152, 143, 0.18);
+  border-radius: 1px;
+  z-index: 1;
+}
+
+.tooltip-text::before,
+.tooltip-text::after {
+  position: absolute;
+  display: block;
+  content: "";
+  top: 9px;
+  width: 0;
+  height: 0;
+  border: 7px solid transparent;
+  border-left-width: 0;
+}
+
+.tooltip-text::before {
+  left: -8px;
+  border-right-color: #b9b9b9;
+}
+
+.tooltip-text::after {
+  left: -7px;
+  border-right-color: #fcfcfc;
+}
+
+.tooltip-toggle:hover + .tooltip-text,
+.tooltip-toggle:focus + .tooltip-text {
+  display: block;
 }
 
 .contacts {

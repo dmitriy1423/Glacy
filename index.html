@@ -384,25 +384,27 @@
         </ul>
       </section>
       <section class="advantages">
-        <h2 class="advantages-title">Магазин Глейси – это онлайн и офлайн-магазин по продаже мороженого собственного производства на развес</h2>
-        <ul class="advantages-list">
-          <li class="advantages-list-item">
-            <span class="advantages-item-icon"></span>
-            <p class="advantages-description">Всё наше мороженое изготавливается на собственном производстве с использованием современного оборудования и проверенных временем технологий.</p>
-          </li>
-          <li class="advantages-list-item">
-            <span class="advantages-item-icon"></span>
-            <p class="advantages-description">Закупка ингредиентов производится только у проверенных фермерских хозяйств, с которыми нас связывает долговременное сотрудничество.</p>
-          </li>
-          <li class="advantages-list-item">
-            <span class="advantages-item-icon"></span>
-            <p class="advantages-description">Для приготовления мороженого используются сливки и молоко высочайшего качества. Все ингредиенты и добавки произведены из натурального сырья.</p>
-          </li>
-          <li class="advantages-list-item">
-            <span class="advantages-item-icon"></span>
-            <p class="advantages-description">Доставка нашего мороженого осуществляется в специальном термопаке, который не даёт мороженому растаять и позволяет сохранить превосходный вкус.</p>
-          </li>
-        </ul>
+        <div class="advantages-wrapper">
+          <h2 class="advantages-title">Магазин Глейси – это онлайн и офлайн-магазин по продаже мороженого собственного производства на развес</h2>
+          <ul class="advantages-list">
+            <li class="advantages-list-item">
+              <span class="advantages-item-icon"></span>
+              <p class="advantages-description">Всё наше мороженое изготавливается на собственном производстве с использованием современного оборудования и проверенных временем технологий.</p>
+            </li>
+            <li class="advantages-list-item">
+              <span class="advantages-item-icon"></span>
+              <p class="advantages-description">Закупка ингредиентов производится только у проверенных фермерских хозяйств, с которыми нас связывает долговременное сотрудничество.</p>
+            </li>
+            <li class="advantages-list-item">
+              <span class="advantages-item-icon"></span>
+              <p class="advantages-description">Для приготовления мороженого используются сливки и молоко высочайшего качества. Все ингредиенты и добавки произведены из натурального сырья.</p>
+            </li>
+            <li class="advantages-list-item">
+              <span class="advantages-item-icon"></span>
+              <p class="advantages-description">Доставка нашего мороженого осуществляется в специальном термопаке, который не даёт мороженому растаять и позволяет сохранить превосходный вкус.</p>
+            </li>
+          </ul>
+        </div>
       </section>
       <div class="news-submit-wrapper">
         <aside class="news">
@@ -410,12 +412,14 @@
           <h2 class="news-title">10 способов сервировки фруктовых щербетов к столу</h2>
         </aside>
         <section class="submit">
-          <h2 class="submit-title visually-hidden">Подпишитесь на рассылку</h2>
-          <p class="submit-description">Подпишитесь на нашу сладкую рассылку и будьте всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой ненужной ерунды. Честно =)</p>
-          <form class="submit-form" action="https://echo.htmlacademy.ru/" method="post">
-            <input class="form-input submit-input" type="email" name="email" placeholder="email@example.com" required>
-            <button class="button red-button submit-button" type="submit">Отправить</button>
-          </form>
+          <div class="submit-wrapper">
+            <h2 class="submit-title visually-hidden">Подпишитесь на рассылку</h2>
+            <p class="submit-description">Подпишитесь на нашу сладкую рассылку и будьте всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой ненужной ерунды. Честно =)</p>
+            <form class="submit-form" action="https://echo.htmlacademy.ru/" method="post">
+              <input class="form-input submit-input" type="email" name="email" placeholder="email@example.com" required>
+              <button class="button red-button submit-button" type="submit">Отправить</button>
+            </form>
+          </div>
         </section>
       </div>
       <section class="delivery">
@@ -428,7 +432,17 @@
           <form class="delivery-form" action="https://echo.htmlacademy.ru/" method="post">
             <div class="delivery-form-input-wrapper">
               <p class="delivery-form-group delivery-form-date">
-                <label class="delivery-form-label" for="delivery-form-date">Дата</label>
+                <span class="form-label form-label-icon">
+                  <label class="delivery-form-label" for="delivery-form-date">Дата</label>
+                  <span class="tooltip">
+                    <button class="tooltip-toggle" type="button" aria-labelledby="tooltip-label-date">
+                      <svg class="tooltip-icon" width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M8.00027 2.33333C4.87051 2.33333 2.33333 4.87051 2.33333 8.00027C2.33333 11.13 4.87051 13.6672 8.00027 13.6672C11.13 13.6672 13.6672 11.13 13.6672 8.00027C13.6672 4.87051 11.13 2.33333 8.00027 2.33333ZM1 8.00027C1 4.13413 4.13413 1 8.00027 1C11.8664 1 15.0005 4.13413 15.0005 8.00027C15.0005 11.8664 11.8664 15.0005 8.00027 15.0005C4.13413 15.0005 1 11.8664 1 8.00027ZM8.00006 7.33332C8.36825 7.33332 8.66672 7.6318 8.66672 7.99999V10.5334C8.66672 10.9016 8.36825 11.2001 8.00006 11.2001C7.63187 11.2001 7.33339 10.9016 7.33339 10.5334V7.99999C7.33339 7.6318 7.63187 7.33332 8.00006 7.33332ZM8.00006 4.79989C7.63187 4.79989 7.33339 5.09836 7.33339 5.46655C7.33339 5.83474 7.63187 6.13322 8.00006 6.13322H8.00672C8.37491 6.13322 8.67339 5.83474 8.67339 5.46655C8.67339 5.09836 8.37491 4.79989 8.00672 4.79989H8.00006Z"/>
+                      </svg>
+                    </button>
+                    <span class="tooltip-text" role="tooltip" id="tooltip-label-date">Введите дату доставки</span>
+                  </span>
+                </span>
                 <input class="form-input" id="delivery-form-date" name="delivery-form-date" type="text" placeholder="01.04.2020" required>
               </p>
               <p class="delivery-form-group delivery-form-tel">
@@ -436,7 +450,17 @@
                 <input class="form-input" id="delivery-form-tel" name="delivery-form-tel" type="text" placeholder="+7 800 999-00-00" required>
               </p>
               <p class="delivery-form-group delivery-form-address">
-                <label class="delivery-form-label" for="delivery-form-address">Адрес</label>
+                <span class="form-label form-label-icon">
+                  <label class="delivery-form-label" for="delivery-form-address">Адрес</label>
+                  <span class="tooltip">
+                    <button class="tooltip-toggle" type="button" aria-labelledby="tooltip-label-date">
+                      <svg class="tooltip-icon" width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M8.00027 2.33333C4.87051 2.33333 2.33333 4.87051 2.33333 8.00027C2.33333 11.13 4.87051 13.6672 8.00027 13.6672C11.13 13.6672 13.6672 11.13 13.6672 8.00027C13.6672 4.87051 11.13 2.33333 8.00027 2.33333ZM1 8.00027C1 4.13413 4.13413 1 8.00027 1C11.8664 1 15.0005 4.13413 15.0005 8.00027C15.0005 11.8664 11.8664 15.0005 8.00027 15.0005C4.13413 15.0005 1 11.8664 1 8.00027ZM8.00006 7.33332C8.36825 7.33332 8.66672 7.6318 8.66672 7.99999V10.5334C8.66672 10.9016 8.36825 11.2001 8.00006 11.2001C7.63187 11.2001 7.33339 10.9016 7.33339 10.5334V7.99999C7.33339 7.6318 7.63187 7.33332 8.00006 7.33332ZM8.00006 4.79989C7.63187 4.79989 7.33339 5.09836 7.33339 5.46655C7.33339 5.83474 7.63187 6.13322 8.00006 6.13322H8.00672C8.37491 6.13322 8.67339 5.83474 8.67339 5.46655C8.67339 5.09836 8.37491 4.79989 8.00672 4.79989H8.00006Z"/>
+                      </svg>
+                    </button>
+                    <span class="tooltip-text" role="tooltip" id="tooltip-label-date">Введите название улицы, дома и квартиры</span>
+                  </span>
+                </span>
                 <input class="form-input" id="delivery-form-address" name="delivery-form-address" type="text" placeholder="ул. Большая Конюшенная, 19/8" required>
               </p>
             </div>
