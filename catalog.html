@@ -166,10 +166,22 @@
             </select>
           </fieldset>
           <fieldset class="filter-group filter-group-price">
-            <legend class="filter-title">Цена: 100 ₽ – 500 ₽</legend>
+            <legend class="filter-title">
+              Цена:
+              <label class="control">
+                <span class="range-input">
+                  <input class="visually-hidden" type="number" name="min-price" value="100">
+                  <span>100</span> ₽ –
+                </span>
+                <span class="range-input">
+                  <input class="visually-hidden" type="number" name="max-price" value="500">
+                  <span>500</span> ₽
+                </span>
+              </label>
+            </legend>
             <div class="range-wrapper">
               <div class="range">
-                <div class="range-bar" style="left: 32px; width: 72px;">
+                <div class="range-bar" style="left: 24px; width: 88px;">
                   <button class="range-toggle toggle-min" type="button">
                     <span class="visually-hidden">Уменьшить цену</span>
                   </button>
@@ -486,7 +498,7 @@
     </main>
     <footer class="footer catalog-footer">
       <div class="footer-wrapper">
-        <ul class="social-list">
+        <ul class="social-list footer-social-list">
           <li class="social-item">
             <a class="social-item-link" href="https://t.me/htmlacademy">
               <svg class="social-link-icon" width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
