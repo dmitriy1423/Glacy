@@ -1520,6 +1520,10 @@ body {
   resize: none;
 }
 
+.modal-textarea::placeholder {
+  color: #b9b9b9;
+}
+
 .modal-textarea:hover {
   outline: 1px solid #2d3440;
 }
