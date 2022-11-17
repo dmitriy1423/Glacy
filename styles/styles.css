@@ -381,6 +381,11 @@ body {
   z-index: 1;
   background-color: #fcfcfc;
   border-radius: 4px;
+  box-shadow: 0 8px 16px rgba(45, 52, 64, 0.12);
+}
+
+.popover-search-form .form-input{
+  width: 100%;
 }
 
 .navigation-item-login {
@@ -424,6 +429,7 @@ body {
   padding: 48px 48px 52px 48px;
   background-color: #fcfcfc;
   border-radius: 4px;
+  box-shadow: 0 15px 40px rgba(45, 52, 64, 0.12);
   z-index: 1;
 }
 
@@ -1740,54 +1746,40 @@ body {
   color: #2d3440;
 }
 
-.control-input[type="radio"] + .control-mark {
-  background-image: url("../images/icons/radio-field.svg");
+.control-mark-icon {
+  fill: #2d3440;
 }
 
-.control-input[type="radio"]:checked + .control-mark {
-  background-image: url("../images/icons/radio-checked.svg");
+.control-mark-icon:hover {
+  fill: #fcfcfc;
 }
 
-.control-input[type="radio"] + .control-mark:hover {
-  background-image: url("../images/icons/radio-field-hover.svg");
+.control-mark-icon-checked {
+  display: none;
+  fill: #2d3440;
 }
 
-.control-input[type="radio"]:checked + .control-mark:hover {
-  background-image: url("../images/icons/radio-checked-hover.svg");
+.control-mark-icon-checked:hover {
+  display: none;
+  fill: #fcfcfc;
 }
 
-.control-input[type="radio"]:disabled + .control-mark {
-  background-image: url("../images/icons/radio-field-disabled.svg");
+.control-input:checked + .control-mark .control-mark-icon-checked {
+  display: inline;
+}
+
+.control-input:checked + .control-mark .control-mark-icon {
+  display: none;
+}
+
+.control-input:disabled + .control-mark,
+.control-input:checked:disabled + .control-mark {
   opacity: 0.4;
 }
 
-.control-input[type="radio"]:disabled:checked + .control-mark {
-  background-image: url("../images/icons/radio-checked-disabled.svg");
-}
-
-.control-input[type="checkbox"] + .control-mark {
-  background-image: url("../images/icons/checkbox-field.svg");
-}
-
-.control-input[type="checkbox"]:checked + .control-mark {
-  background-image: url("../images/icons/checkbox-checked.svg");
-}
-
-.control-input[type="checkbox"] + .control-mark:hover {
-  background-image: url("../images/icons/checkbox-field-hover.svg");
-}
-
-.control-input[type="checkbox"]:checked + .control-mark:hover {
-  background-image: url("../images/icons/checkbox-checked-hover.svg");
-}
-
-.control-input[type="checkbox"]:disabled + .control-mark {
-  background-image: url("../images/icons/checkbox-field-disabled.svg");
-  opacity: 0.5;
-}
-
-.control-input[type="checkbox"]:disabled:checked + .control-mark {
-  background-image: url("../images/icons/checkbox-checked-disabled.svg");
+.control-input:disabled + .control-mark .control-mark-icon:hover,
+.control-input:disabled + .control-mark .control-mark-icon-checked:hover {
+  fill: #2d3440;
 }
 
 .filter-button {
