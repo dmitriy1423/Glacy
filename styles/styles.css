@@ -297,14 +297,31 @@ body {
   align-items: flex-start;
 }
 
+.popover-item {
+  width: 100%;
+}
+
 .popover-link {
   position: relative;
   display: block;
-  padding: 6px 12px 6px 16px;
+  padding: 6px 0 6px 16px;
   font-size: 14px;
   line-height: 20px;
   color: #2d3440;
   text-decoration: none;
+}
+
+.popover-link:not(.popover-link-current):hover {
+  background-color: #ffcbd8;
+}
+
+.popover-link:not(.popover-link-current):focus {
+  background-color: #ff4a78;
+  color: #fcfcfc;
+}
+
+.popover-link:not(.popover-link-current):active {
+  background-color: #ff7799;
 }
 
 .popover-link-current {
